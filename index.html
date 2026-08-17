@@ -60,12 +60,21 @@
             <span id="progress-text"></span>
           </div>
           <div class="progress-bar"><div id="progress-fill"></div></div>
+          <div id="top-collector" class="top-collector"></div>
         </div>
 
         <div class="filter-bar">
-          <button class="filter-btn active" data-filter="all" type="button">전체</button>
-          <button class="filter-btn" data-filter="collected" type="button">수집함</button>
-          <button class="filter-btn" data-filter="missing" type="button">미수집</button>
+          <select id="status-filter" class="filter-select">
+            <option value="all">전체</option>
+            <option value="collected">수집함</option>
+            <option value="missing">미수집</option>
+          </select>
+          <select id="team-filter" class="filter-select">
+            <option value="all">전체 팀</option>
+          </select>
+          <select id="category-filter" class="filter-select">
+            <option value="all">전체 카테고리</option>
+          </select>
         </div>
 
         <div id="card-grid" class="card-grid"></div>

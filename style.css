@@ -169,6 +169,13 @@ main {
   overflow: hidden;
 }
 
+.top-collector {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #7a7a90;
+  min-height: 16px;
+}
+
 #progress-fill {
   height: 100%;
   width: 0%;
@@ -181,22 +188,30 @@ main {
   display: flex;
   gap: 8px;
   margin: 16px 0;
+  flex-wrap: wrap;
 }
 
-.filter-btn {
+.filter-select {
   border: 1px solid #e2e2ee;
   background: #fff;
-  padding: 6px 14px;
+  padding: 6px 30px 6px 12px;
   border-radius: 999px;
   font-size: 13px;
   color: #55556b;
+  cursor: pointer;
+  /* 브라우저 기본 화살표는 padding으로 위치 조절이 안 돼서 없애고 직접 그려넣음 */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%2355556b' stroke-width='2'%3E%3Cpath d='M5 8l5 5 5-5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
 }
 
-.filter-btn.active {
-  background: #24243a;
-  border-color: #24243a;
-  color: #fff;
-  font-weight: 600;
+.filter-select:focus {
+  outline: none;
+  border-color: #6c5ce7;
 }
 
 .loading {
@@ -268,13 +283,15 @@ main {
 .card-item.collected .name { color: #24243a; font-weight: 600; }
 
 .card-item .sub {
-  padding: 1px 8px 10px;
+  padding: 1px 8px;
   font-size: 10.5px;
   text-align: center;
   color: #a3a3b8;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+.card-item .sub:last-of-type {
+  padding-bottom: 10px;
 }
 
 .card-item.tier-basic { border-left: 4px solid #95a5a6; }

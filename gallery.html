@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>카드 갤러리 - 카드 아카이브</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  body { max-width: 1080px; margin: 0 auto; padding: 20px; }
+  .gallery-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+  .gallery-header h1 { font-size: 20px; margin: 0; }
+  #series-select {
+    padding: 8px 30px 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #e2e2ee;
+    font-size: 14px;
+    min-width: 240px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%2355556b' stroke-width='2'%3E%3Cpath d='M5 8l5 5 5-5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+  }
+  #count-label { font-size: 13px; color: #7a7a90; }
+  .card-item { cursor: default; }
+  .card-item img { filter: none; opacity: 1; } /* 갤러리에서는 항상 원래 색으로 보여줌 (수집 여부 없음) */
+  .card-item .badge, .card-item .base-num { display: none; }
+  .card-item.show-num .base-num {
+    display: block; position: absolute; top: 6px; right: 6px;
+    background: rgba(0,0,0,0.55); color: #fff; font-size: 11px;
+    padding: 2px 6px; border-radius: 999px;
+  }
+</style>
+</head>
+<body>
+  <div class="gallery-header">
+    <h1>🖼️ 카드 갤러리 (미리보기 전용)</h1>
+    <div>
+      <select id="series-select"><option>시리즈 불러오는 중...</option></select>
+      <span id="count-label"></span>
+    </div>
+  </div>
+  <div id="card-grid" class="card-grid"></div>
+
+  <script type="module" src="gallery.js"></script>
+</body>
+</html>
